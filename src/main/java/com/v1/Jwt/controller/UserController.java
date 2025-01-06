@@ -31,4 +31,10 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
+    // login
+    @PostMapping("/login")
+    public String login(@RequestBody Users user) {
+       return userService.verify(user);
+    }
+
 }
